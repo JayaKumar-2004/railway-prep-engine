@@ -5,157 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RRB NTPC Prep Portal</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-      margin: 0;
-      padding: 16px;
-      display: flex;
-      justify-content: center;
-    }
-    .card {
-      width: 100%;
-      max-width: 720px;
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #334155;
-      padding-bottom: 12px;
-      margin-bottom: 16px;
-    }
-    .title {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: #38bdf8;
-    }
-    .badge {
-      background: #0284c7;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 9999px;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-    .nav-tabs {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 16px;
-      overflow-x: auto;
-      padding-bottom: 4px;
-    }
-    .tab-btn {
-      background: #334155;
-      color: #94a3b8;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-    .tab-btn.active {
-      background: #38bdf8;
-      color: #0f172a;
-    }
-    .tab-content {
-      display: none;
-    }
-    .tab-content.active {
-      display: block;
-    }
-    .box {
-      background: #0f172a;
-      border: 1px solid #334155;
-      border-radius: 8px;
-      padding: 14px;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin-bottom: 14px;
-    }
-    .input-field {
-      width: 100%;
-      box-sizing: border-box;
-      background: #0f172a;
-      border: 1px solid #38bdf8;
-      border-radius: 8px;
-      padding: 12px;
-      color: #f8fafc;
-      font-size: 0.95rem;
-      outline: none;
-      margin-bottom: 16px;
-    }
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-    .stat-box {
-      background: #0f172a;
-      border: 1px solid #334155;
-      border-radius: 8px;
-      padding: 10px;
-      text-align: center;
-    }
-    .stat-val {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #4ade80;
-    }
-    .stat-lbl {
-      font-size: 0.75rem;
-      color: #94a3b8;
-      text-transform: uppercase;
-      margin-top: 4px;
-    }
-    .actions {
-      display: flex;
-      gap: 10px;
-    }
-    .btn {
-      flex: 1;
-      padding: 10px;
-      border-radius: 6px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 16px; display: flex; justify-content: center; }
+    .card { width: 100%; max-width: 720px; background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 20px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); }
+    .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #334155; padding-bottom: 12px; margin-bottom: 16px; }
+    .title { font-weight: 700; font-size: 1.1rem; color: #38bdf8; }
+    .badge { background: #0284c7; color: white; padding: 4px 10px; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; }
+    .nav-tabs { display: flex; gap: 8px; margin-bottom: 16px; overflow-x: auto; padding-bottom: 4px; }
+    .tab-btn { background: #334155; color: #94a3b8; border: none; padding: 8px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+    .tab-btn.active { background: #38bdf8; color: #0f172a; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .box { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 14px; font-size: 0.95rem; line-height: 1.5; margin-bottom: 14px; }
+    .input-field { width: 100%; box-sizing: border-box; background: #0f172a; border: 1px solid #38bdf8; border-radius: 8px; padding: 12px; color: #f8fafc; font-size: 0.95rem; outline: none; margin-bottom: 16px; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+    .stat-box { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 10px; text-align: center; }
+    .stat-val { font-size: 1.25rem; font-weight: 700; color: #4ade80; }
+    .stat-lbl { font-size: 0.75rem; color: #94a3b8; text-transform: uppercase; margin-top: 4px; }
+    .actions { display: flex; gap: 10px; }
+    .btn { flex: 1; padding: 10px; border-radius: 6px; border: none; font-weight: 600; cursor: pointer; }
     .btn-primary { background: #38bdf8; color: #0f172a; }
-    
-    /* MCQ Styles */
-    .mcq-option {
-      display: block;
-      background: #0f172a;
-      border: 1px solid #334155;
-      padding: 12px;
-      border-radius: 6px;
-      margin-bottom: 8px;
-      cursor: pointer;
-    }
+    .btn:disabled { background: #334155; color: #94a3b8; cursor: not-allowed; }
+    .mcq-option { display: block; background: #0f172a; border: 1px solid #334155; padding: 12px; border-radius: 6px; margin-bottom: 8px; cursor: pointer; transition: 0.2s; }
     .mcq-option:hover { border-color: #38bdf8; }
-    
-    /* Tracker Styles */
-    .section-title {
-      color: #4ade80;
-      font-weight: 600;
-      margin: 16px 0 8px 0;
-      font-size: 1rem;
-      border-bottom: 1px solid #334155;
-      padding-bottom: 4px;
-    }
-    ul.syllabus-list {
-      margin: 0; padding-left: 20px; font-size: 0.9rem; color: #cbd5e1;
-    }
+    .mcq-option.correct { background: #14532d; border-color: #4ade80; }
+    .mcq-option.wrong { background: #7f1d1d; border-color: #ef4444; }
+    .section-title { color: #4ade80; font-weight: 600; margin: 16px 0 8px 0; font-size: 1rem; border-bottom: 1px solid #334155; padding-bottom: 4px; }
+    ul.syllabus-list { margin: 0; padding-left: 20px; font-size: 0.9rem; color: #cbd5e1; }
     ul.syllabus-list li { margin-bottom: 4px; }
+    .char-correct { color: #4ade80; }
+    .char-wrong { color: #ef4444; text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -167,14 +45,14 @@
 
     <!-- Navigation Tabs -->
     <div class="nav-tabs">
-      <button class="tab-btn active" onclick="switchTab('typing')">Typing Engine</button>
-      <button class="tab-btn" onclick="switchTab('mcq')">MCQ Mock Test</button>
-      <button class="tab-btn" onclick="switchTab('tracker')">Study Tracker</button>
+      <button class="tab-btn active" onclick="switchTab('typing', event)">Typing Engine</button>
+      <button class="tab-btn" onclick="switchTab('mcq', event)">MCQ Mock Test</button>
+      <button class="tab-btn" onclick="switchTab('tracker', event)">Study Tracker</button>
     </div>
 
     <!-- TAB 1: TYPING ENGINE -->
     <div id="typing" class="tab-content active">
-      <div class="box" id="typing-text">
+      <div class="box" id="typing-text-display">
         The Railway Recruitment Board conducts Computer Based Tests across multiple shifts. Regular practice ensures speed and accuracy under actual exam conditions to secure a desk role.
       </div>
       <input type="text" id="typing-input" class="input-field" placeholder="Start typing here to begin timer..." autocomplete="off" />
@@ -191,22 +69,19 @@
     <!-- TAB 2: MCQ PRACTICE -->
     <div id="mcq" class="tab-content">
       <div class="box">
-        <strong>General Awareness (Q1/100)</strong><br><br>
-        Which of the following topics is a core component of the RRB NTPC General Awareness syllabus?
+        <strong id="mcq-category">General Awareness (Q1)</strong><br><br>
+        <span id="mcq-question">Which state of India produces the highest quantity of Jute?</span>
       </div>
-      <div class="mcq-options">
-        <div class="mcq-option">A) Advanced Calculus</div>
-        <div class="mcq-option">B) Art & Culture of India</div>
-        <div class="mcq-option">C) Machine Learning Algorithms</div>
-        <div class="mcq-option">D) Python Programming</div>
+      <div id="mcq-options-container">
+        <!-- Options generated by JS -->
       </div>
       <div class="stats" style="margin-top: 16px;">
-        <div class="stat-box"><div class="stat-val" style="color: #4ade80;">+1</div><div class="stat-lbl">Correct</div></div>
-        <div class="stat-box"><div class="stat-val" style="color: #ef4444;">-0.33</div><div class="stat-lbl">Penalty</div></div>
-        <div class="stat-box"><div class="stat-val">72.6</div><div class="stat-lbl">Est. Score</div></div>
+        <div class="stat-box"><div class="stat-val" style="color: #4ade80;" id="mcq-correct">0</div><div class="stat-lbl">Correct (+1)</div></div>
+        <div class="stat-box"><div class="stat-val" style="color: #ef4444;" id="mcq-penalty">0</div><div class="stat-lbl">Penalty (-0.33)</div></div>
+        <div class="stat-box"><div class="stat-val" id="mcq-score">0.00</div><div class="stat-lbl">Raw Score</div></div>
       </div>
       <div class="actions">
-        <button class="btn btn-primary">Submit Answer</button>
+        <button class="btn btn-primary" id="btn-next-q" onclick="nextQuestion()" disabled>Next Question</button>
       </div>
     </div>
 
@@ -222,68 +97,180 @@
           <li>Mock Test: Alternate days</li>
         </ul>
       </div>
-
       <div class="section-title">Mathematics (30 Qs)</div>
       <ul class="syllabus-list">
-        <li>Number System, Decimals & Fractions</li>
-        <li>LCM & HCF, Ratio & Proportion</li>
-        <li>Percentage, Profit & Loss, SI & CI</li>
+        <li>Number System, Decimals & Fractions, LCM & HCF</li>
+        <li>Ratio, Percentage, Profit & Loss, SI & CI</li>
         <li>Time & Work, Time, Speed & Distance</li>
-        <li>Algebra, Geometry, Trigonometry</li>
-        <li>Mensuration (2D & 3D), Data Interpretation</li>
-      </ul>
-
-      <div class="section-title">General Intelligence & Reasoning (30 Qs)</div>
-      <ul class="syllabus-list">
-        <li>Analogies, Coding-Decoding, Series</li>
-        <li>Blood Relations, Direction Sense</li>
-        <li>Syllogism, Venn Diagrams, Puzzles</li>
-        <li>Statement & Conclusion / Assumption</li>
-        <li>Data Sufficiency, Non-Verbal Reasoning</li>
-      </ul>
-
-      <div class="section-title">General Awareness (40 Qs)</div>
-      <ul class="syllabus-list">
-        <li>Current Affairs (National & International)</li>
-        <li>History, Polity, Geography, Economy of India</li>
-        <li>General Science (Physics, Chemistry, Biology)</li>
-        <li>Art & Culture, Monuments, Literature</li>
-        <li>Computers, Environment, Sports</li>
       </ul>
     </div>
   </div>
 
   <script>
-    // Tab Switching Logic
-    function switchTab(tabId) {
+    // --- TAB LOGIC ---
+    function switchTab(tabId, event) {
       document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      
       document.getElementById(tabId).classList.add('active');
       event.target.classList.add('active');
 
-      if(tabId === 'mcq') document.getElementById('main-timer').innerText = "CBT-1 Timer: 90:00";
-      if(tabId === 'typing') document.getElementById('main-timer').innerText = "Typing: 10:00";
-      if(tabId === 'tracker') document.getElementById('main-timer').innerText = "Target: 5165 Posts";
+      const timer = document.getElementById('main-timer');
+      if(tabId === 'mcq') timer.innerText = "CBT-1 Mode";
+      if(tabId === 'typing') timer.innerText = "Typing: 10:00 Target: 30WPM";
+      if(tabId === 'tracker') timer.innerText = "Target: 5165 Posts";
     }
 
-    // Basic Typing Logic placeholder
-    let isTyping = false;
-    document.getElementById('typing-input').addEventListener('input', function() {
-      if(!isTyping) {
-        isTyping = true;
-        // Start timer logic here
-        console.log("Typing test started");
+    // --- TYPING ENGINE LOGIC ---
+    const originalText = "The Railway Recruitment Board conducts Computer Based Tests across multiple shifts. Regular practice ensures speed and accuracy under actual exam conditions to secure a desk role.";
+    const typingInput = document.getElementById('typing-input');
+    const textDisplay = document.getElementById('typing-text-display');
+    let startTime = null;
+    let typingTimer = null;
+
+    typingInput.addEventListener('input', function() {
+      if (!startTime) {
+        startTime = new Date();
+        typingTimer = setInterval(updateTypingStats, 500);
       }
+      
+      const typed = typingInput.value;
+      let html = '';
+      let errors = 0;
+
+      for (let i = 0; i < originalText.length; i++) {
+        if (i < typed.length) {
+          if (typed[i] === originalText[i]) {
+            html += `<span class="char-correct">${originalText[i]}</span>`;
+          } else {
+            html += `<span class="char-wrong">${originalText[i]}</span>`;
+            errors++;
+          }
+        } else {
+          html += originalText[i];
+        }
+      }
+      textDisplay.innerHTML = html;
     });
 
+    function updateTypingStats() {
+      const typed = typingInput.value;
+      if (typed.length === 0) return;
+
+      const timeElapsed = (new Date() - startTime) / 60000; // in minutes
+      
+      let errors = 0;
+      for (let i = 0; i < typed.length; i++) {
+        if (typed[i] !== originalText[i]) errors++;
+      }
+
+      // Standard typing calculation: 5 characters = 1 word
+      const grossWPM = Math.round((typed.length / 5) / timeElapsed);
+      const netWPM = Math.max(0, Math.round(grossWPM - (errors / timeElapsed)));
+      const accuracy = Math.round(((typed.length - errors) / typed.length) * 100);
+
+      document.getElementById('wpm-gross').innerText = grossWPM;
+      document.getElementById('wpm-net').innerText = netWPM;
+      document.getElementById('accuracy').innerText = accuracy + "%";
+    }
+
     function resetTyping() {
-      document.getElementById('typing-input').value = "";
-      isTyping = false;
+      typingInput.value = "";
+      textDisplay.innerText = originalText;
+      startTime = null;
+      clearInterval(typingTimer);
       document.getElementById('wpm-gross').innerText = "0";
       document.getElementById('wpm-net').innerText = "0";
       document.getElementById('accuracy').innerText = "100%";
     }
+
+    // --- MCQ ENGINE LOGIC ---
+    const pyqData = [
+      {
+        category: "General Awareness",
+        question: "Which state of India produces the highest quantity of Jute?",
+        options: ["Bihar", "Odisha", "West Bengal", "Assam"],
+        correctIndex: 2
+      },
+      {
+        category: "Mathematics",
+        question: "20 pens and 46 pencils were purchased for ₹235. If the average price of a pencil is ₹2.50, then calculate the average price of a pen.",
+        options: ["₹6.00", "₹4.50", "₹5.00", "₹8.00"],
+        correctIndex: 0
+      },
+      {
+        category: "Reasoning",
+        question: "Number Analogy: 64 : 513 :: 144 : ?",
+        options: ["1727", "1729", "1728", "1730"],
+        correctIndex: 1
+      }
+    ];
+
+    let currentQ = 0;
+    let correctCount = 0;
+    let penaltyCount = 0;
+    let answered = false;
+
+    function loadQuestion() {
+      answered = false;
+      document.getElementById('btn-next-q').disabled = true;
+      const q = pyqData[currentQ];
+      
+      document.getElementById('mcq-category').innerText = `${q.category} (Q${currentQ + 1}/${pyqData.length})`;
+      document.getElementById('mcq-question').innerText = q.question;
+      
+      const optionsContainer = document.getElementById('mcq-options-container');
+      optionsContainer.innerHTML = '';
+      
+      q.options.forEach((opt, index) => {
+        const div = document.createElement('div');
+        div.className = 'mcq-option';
+        div.innerText = `${String.fromCharCode(65 + index)}) ${opt}`;
+        div.onclick = () => checkAnswer(index, div);
+        optionsContainer.appendChild(div);
+      });
+    }
+
+    function checkAnswer(selectedIndex, optElement) {
+      if (answered) return;
+      answered = true;
+      document.getElementById('btn-next-q').disabled = false;
+      
+      const q = pyqData[currentQ];
+      const allOptions = document.querySelectorAll('.mcq-option');
+      
+      if (selectedIndex === q.correctIndex) {
+        optElement.classList.add('correct');
+        correctCount++;
+      } else {
+        optElement.classList.add('wrong');
+        allOptions[q.correctIndex].classList.add('correct');
+        penaltyCount++;
+      }
+      
+      updateScore();
+    }
+
+    function updateScore() {
+      document.getElementById('mcq-correct').innerText = correctCount;
+      document.getElementById('mcq-penalty').innerText = penaltyCount;
+      const rawScore = (correctCount * 1) - (penaltyCount * 0.33);
+      document.getElementById('mcq-score').innerText = rawScore.toFixed(2);
+    }
+
+    function nextQuestion() {
+      currentQ++;
+      if (currentQ < pyqData.length) {
+        loadQuestion();
+      } else {
+        document.getElementById('mcq-question').innerText = "Mock Test Complete! Restart to try again.";
+        document.getElementById('mcq-options-container').innerHTML = '';
+        document.getElementById('btn-next-q').disabled = true;
+        currentQ = 0; // Reset for next time
+      }
+    }
+
+    // Initialize first question on load
+    loadQuestion();
   </script>
 </body>
 </html>
